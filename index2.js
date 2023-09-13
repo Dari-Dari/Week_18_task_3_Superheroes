@@ -20,11 +20,14 @@ class Rating {
     change(e) {
         let value = e.target.dataset.value;
         if (value) {
-            this.svg.parentNode.dataset.value = value;
+          this.svg.parentNode.dataset.value = value;
+          localStorage.setItem(`rating_${this.cardId}`, value);
+        } else {
+          delete this.svg.parentNode.dataset.value;
+          localStorage.removeItem(`rating_${this.cardId}`);
         }
-        localStorage.setItem(`rating_${this.cardId}`, value);
         this.render();
-    }
+      }
 
     render() {
         this.svg.querySelectorAll('polygon').forEach(star => {
@@ -36,8 +39,9 @@ class Rating {
 
 // Загрузка данных из файла hero.json
 fetch('hero.json')
-    .then(response => response.json())
-    .then(data => createHeroCards(data));
+  .then(response => response.json())
+  .then(data => createHeroCards(data))
+  .catch(error => console.error('Ошибка при загрузке данных:', error));
 
 // Функция для создания карточек супергероев
 function createHeroCards(heroes) {
@@ -75,6 +79,7 @@ function createHeroCards(heroes) {
 
         const image = document.createElement('img');
         image.src = hero.url;
+        image.alt = "Superhero";
         card.appendChild(image);
 
         const info = document.createElement('p');
