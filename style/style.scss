@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.rating polygon:hover {
+    cursor: pointer;
+    transition: 500ms;
+  }
+  .rating polygon:hover {
+    fill: black;
+  }
+  .rating polygon {
+    fill: lightgray;
+  }
+  .rating polygon.active{
+    fill: gold;
+  }
+
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .card {
+      position: relative;
+      max-width: 30vw;
+      margin: 2%;
+      padding: 2%;
+      border: 1px solid gold;
+border-radius: 10px;
+
+img {
+  height: auto;
+  width: 90%;
+  text-align: center;
+}
+
+.info {
+  padding-bottom: 10%;
+}
+
+.rating {
+  position: absolute;
+  bottom: 2%;
+      }
+    }
+  }
