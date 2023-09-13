@@ -47,4 +47,15 @@ h1 {
 .container .card .rating {
   position: absolute;
   bottom: 2%;
+}
+
+@media screen and (max-width: 578px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .container .card {
+    margin: 0 auto;
+    max-width: 90vw;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -49,3 +49,15 @@ img {
       }
     }
   }
+
+  @media screen and (max-width: 578px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .card {
+        margin: 0 auto;
+        max-width: 90vw;
+    }
+  }
+  }
